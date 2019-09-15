@@ -14,7 +14,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         content_len = int(self.headers['Content-Length'])
         post_body = self.rfile.read(content_len)
         try:
-            json_data = json.loads(post_body.decode('utf-8'))
+            json_data = json.loads(post_body.decode('utf-8'), strict=False)
             parsed_path = urlparse(self.path)
             self.send_response(200)
             self.end_headers()
