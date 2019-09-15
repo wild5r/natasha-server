@@ -2,7 +2,7 @@
 
 ```
 docker build -t natasha-server .
-docker run -d -p 127.0.0.1:10101:8080 --restart unless-stopped natasha-server
+docker run -d -p 127.0.0.1:10101:8080 --user nobody --restart unless-stopped natasha-server
 ```
 
 # Dev server
